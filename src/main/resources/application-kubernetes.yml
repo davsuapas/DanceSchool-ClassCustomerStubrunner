@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.99.1
+          zkNodes: 192.168.99.1
+      default-binder: kafka
+
+stubrunner:
+  stubsMode: REMOTE
+  repositoryRoot: http://localhost:8081/artifactory/libs-release-local # Is sent by pipeline
+  ids:
+    - com.elipcero.classcustomerschool:classcustomer-school:1.0.0:stubs
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-school:8761/eureka/

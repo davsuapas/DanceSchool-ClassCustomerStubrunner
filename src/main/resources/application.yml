@@ -6,3 +6,11 @@ stubrunner:
     stubbed:
       discovery:
         enabled: false
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+
