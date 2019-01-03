@@ -3,7 +3,7 @@ management:
     web.base-path: /
 
 server:
-  port: 8765
+  port: 8050
 
 stubrunner:
   cloud:
