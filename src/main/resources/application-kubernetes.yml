@@ -10,8 +10,6 @@ spring:
 stubrunner:
   stubsMode: REMOTE
   repositoryRoot: http://localhost:8081/artifactory/libs-release-local # Is sent by pipeline
-  ids:
-    - com.elipcero.classcustomerschool:classcustomer-school:1.0.0:stubs
 
 eureka:
   client:
