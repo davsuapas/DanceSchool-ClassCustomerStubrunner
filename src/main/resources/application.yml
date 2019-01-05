@@ -2,7 +2,7 @@ spring:
   application:
     name: classcustomerstubrunnerschool
   profiles:
-    active: kubernetes
+    active: development
 
 server:
   port: 8050
@@ -51,3 +51,6 @@ spring:
 
 stubrunner:
   stubsMode: REMOTE
+  repositoryRoot: http://artifactory:8081/artifactory/libs-release-local # Is sent by pipeline
+  ids:
+    - com.elipcero.classcustomerschool:classcustomer-school:+:stubs:8762
