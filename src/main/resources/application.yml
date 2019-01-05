@@ -7,6 +7,10 @@ spring:
 server:
   port: 8050
 
+management:
+  endpoints:
+    web.base-path: /
+
 stubrunner:
   cloud:
     stubbed:
