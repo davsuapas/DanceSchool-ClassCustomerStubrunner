@@ -51,6 +51,6 @@ spring:
 
 stubrunner:
   stubsMode: REMOTE
-  repositoryRoot: http://artifactory:8081/artifactory/libs-release-local # Is sent by pipeline
+  repositoryRoot: ${REPO_WITH_JARS:http://localhost:8081/artifactory/libs-release-local}
   ids:
     - com.elipcero.classcustomerschool:classcustomer-school:+:stubs:8762
