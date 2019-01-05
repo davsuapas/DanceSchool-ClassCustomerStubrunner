@@ -1,6 +1,8 @@
-management:
-  endpoints:
-    web.base-path: /
+spring:
+  application:
+    name: classcustomerstubrunnerschool
+  profiles:
+    active: development
 
 server:
   port: 8050
@@ -11,10 +13,40 @@ stubrunner:
       discovery:
         enabled: false
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
+---
 
+spring:
+  profiles: development
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost
+          zkNodes: localhost
+      default-binder: kafka
+
+stubrunner:
+  stubsMode: LOCAL
+  repositoryRoot: http://localhost:8081/artifactory/libs-release-local # Is sent by pipeline
+  ids:
+    - com.elipcero.classcustomerschool:classcustomer-school:+:stubs:8762
+
+---
+
+spring:
+  profiles: kubernetes
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.99.1
+          zkNodes: 192.168.99.1
+      default-binder: kafka
+
+stubrunner:
+  stubsMode: REMOTE
+  repositoryRoot: http://localhost:8081/artifactory/libs-release-local # Is sent by pipeline
+  ids:
+    - com.elipcero.classcustomerschool:classcustomer-school:+:stubs:8762
