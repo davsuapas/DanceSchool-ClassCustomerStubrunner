@@ -2,7 +2,7 @@ spring:
   application:
     name: classcustomerstubrunnerschool
   profiles:
-    active: kubernetes
+    active: development
 
 server:
   port: 8050
