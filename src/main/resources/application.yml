@@ -50,5 +50,4 @@ spring:
 
 stubrunner:
   stubsMode: REMOTE
-  ids:
-    - com.elipcero.classcustomerschool:classcustomer-school:+:stubs:8762
+  ids: ${STUBRUNNER_IDS}
