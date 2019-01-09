@@ -47,3 +47,8 @@ spring:
           brokers: 192.168.99.1
           zkNodes: 192.168.99.1
       default-binder: kafka
+
+stubrunner:
+  stubsMode: REMOTE
+  ids:
+    - com.elipcero.classcustomerschool:classcustomer-school:+:stubs:8762
